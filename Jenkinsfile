@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o hello_exec hello.cpp' // Compile the C++ file
+                    sh 'g++ -o main/hello_exec main/hello.cpp' // Compile the C++ file
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './hello_exec' // Run the compiled file
+                    sh './main/hello_exec' // Run the compiled file
                 }
             }
         }
@@ -21,7 +21,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Add deployment steps if needed
             }
         }
     }
