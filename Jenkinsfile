@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                     sh './main/hello_exec' // Run the compiled file
+                    sh 'invalid_command' // Intentional error added here 🚨
                 }
             }
         }
